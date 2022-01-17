@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { ConvertToSpacePipe } from './pipes/convert-to-space.pipe';
 
 import { ProductComponent } from './product/product.component';
+import { StarComponent } from './shared/star/star.component';
+//import { StarComponent } from './shared/star.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    ConvertToSpacePipe
+    ConvertToSpacePipe,
+    StarComponent,
+   
     
   ],
   imports: [
