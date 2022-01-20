@@ -1,6 +1,6 @@
 <div class='card'>
   <div class='class-header'>
-      Product List
+      {{pageTitle}}
   </div>
 <div class='card-body'>
     <div class ='row'>
@@ -16,7 +16,7 @@
     </div>
 
     
-    
+
     <div class='table-responsive'>
         <table class='table' *ngIf=products.length>
             <thead>
@@ -45,7 +45,7 @@
                   <td>{{product.code }}</td>
                   <td>{{product.date}}</td>
                   <td>{{product.price |currency:'USD':'symbol':'1.2-2'}}</td>
-                  <td>{{product.Rating}}</td>
+                  <td><app-star [rating]="product.Rating" (ratingClick)="onRatingClick($event)"></app-star></td>
               </tr>
             </tbody>
         </table>

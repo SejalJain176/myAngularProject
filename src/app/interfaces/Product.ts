@@ -3,6 +3,6 @@ export interface Product{
     code:string,
     date:string,
     price:number,
-    Rating:string,
+    Rating:number,
     imageUrl:string
 }

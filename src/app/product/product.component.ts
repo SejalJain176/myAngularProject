@@ -1,6 +1,7 @@
 import { BindingFlags } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../interfaces/Product';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -8,10 +9,13 @@ import { Product } from '../interfaces/Product';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+
+  
   performFilter(v: string): Product[] {
     v = v.toLocaleLowerCase();
     return this.products.filter((product: Product) => product.Name.toLocaleLowerCase().includes(v));
   }
+  pageTitle="Product List"
   show = false;
   width = 50;
   margin = 2;
@@ -28,13 +32,13 @@ export class ProductComponent implements OnInit {
   showImg() {
     this.show = !this.show;
   }
-  constructor() { }
+  constructor( private ProductService:ProductService) { }
   products: Product[] = [{
     Name: "Bag",
     code: '1-abc',
     date: "12-09-2021",
     price: 70,
-    Rating: "5",
+    Rating: 5,
     imageUrl: "assets/images/bag.jpg"
 
   },
@@ -43,12 +47,14 @@ export class ProductComponent implements OnInit {
     code: "2-abc",
     date: "12-09-2021",
     price: 700,
-    Rating: "5",
+    Rating: 4,
     imageUrl: "assets/images/suit.jpg"
 
   }
   ]
   ngOnInit(): void {
   }
-
+  onRatingClick(msg: string){
+    this.pageTitle=msg;
+  }
 }
