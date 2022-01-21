@@ -33,26 +33,11 @@ export class ProductComponent implements OnInit {
     this.show = !this.show;
   }
   constructor( private ProductService:ProductService) { }
-  products: Product[] = [{
-    Name: "Bag",
-    code: '1-abc',
-    date: "12-09-2021",
-    price: 70,
-    Rating: 5,
-    imageUrl: "assets/images/bag.jpg"
-
-  },
-  {
-    Name: "Suit",
-    code: "2-abc",
-    date: "12-09-2021",
-    price: 700,
-    Rating: 4,
-    imageUrl: "assets/images/suit.jpg"
-
-  }
+  products: Product[] = [
   ]
+  
   ngOnInit(): void {
+    this.products=this.ProductService.getproducts();
   }
   onRatingClick(msg: string){
     this.pageTitle=msg;
