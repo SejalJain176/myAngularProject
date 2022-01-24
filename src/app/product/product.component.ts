@@ -1,5 +1,6 @@
 import { BindingFlags } from '@angular/compiler/src/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Product } from '../interfaces/Product';
 import { ProductService } from '../services/product.service';
 
@@ -8,9 +9,9 @@ import { ProductService } from '../services/product.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit,OnDestroy{
 
-  
+  sub:Subscription | undefined;
   performFilter(v: string): Product[] {
     v = v.toLocaleLowerCase();
     return this.products.filter((product: Product) => product.Name.toLocaleLowerCase().includes(v));
@@ -37,9 +38,16 @@ export class ProductComponent implements OnInit {
   ]
   
   ngOnInit(): void {
-    this.products=this.ProductService.getproducts();
+    this.ProductService.getproducts().subscribe(data=>{
+      this.products=data;
+      this.filteredProducts=this.products;
+
+    });
   }
   onRatingClick(msg: string){
     this.pageTitle=msg;
+  }
+  ngOnDestroy():void{
+this.sub?.unsubscribe;
   }
 }

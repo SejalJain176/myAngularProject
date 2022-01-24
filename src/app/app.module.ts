@@ -8,6 +8,7 @@ import { ConvertToSpacePipe } from './pipes/convert-to-space.pipe';
 
 import { ProductComponent } from './product/product.component';
 import { StarComponent } from './shared/star/star.component';
+import {HttpClientModule} from '@angular/common/http'
 //import { StarComponent } from './shared/star.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -18,12 +19,14 @@ import { StarComponent } from './shared/star/star.component';
     ConvertToSpacePipe,
     StarComponent,
    
+   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
     
     
    
