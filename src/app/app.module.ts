@@ -9,6 +9,8 @@ import { ConvertToSpacePipe } from './pipes/convert-to-space.pipe';
 import { ProductComponent } from './product/product.component';
 import { StarComponent } from './shared/star/star.component';
 import {HttpClientModule} from '@angular/common/http'
+import { RouterModule } from '@angular/router';
+import { ProductListComponentComponent } from './product/product-list-component.component';
 //import { StarComponent } from './shared/star.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -18,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http'
     ProductComponent,
     ConvertToSpacePipe,
     StarComponent,
+    ProductListComponentComponent,
    
    
     
@@ -26,7 +29,10 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path:'products',component:ProductListComponentComponent}
+    ])
     
     
    
