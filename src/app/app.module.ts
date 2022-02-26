@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { ProductListComponentComponent } from './product/product-list-component.component';
 import { WelcomeComponentComponent } from './welcome-component/welcome-component.component';
 import { ProductDetailComponent } from './product/product-detail.component';
+import { ProductDetailGuard } from './product-detail.guard';
 //import { StarComponent } from './shared/star.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -37,7 +38,7 @@ import { ProductDetailComponent } from './product/product-detail.component';
     
     RouterModule.forRoot([
       {path:'products',component:ProductComponent},
-      {path:'products/:id',component:ProductDetailComponent},
+      {path:'products/:id',canActivate:[ProductDetailGuard],component:ProductDetailComponent},
       {path:'welcome',component:WelcomeComponentComponent},
       {path:'',redirectTo:'welcome',pathMatch:'full'},
       {path:'**',redirectTo:'welcome',pathMatch:'full'}
