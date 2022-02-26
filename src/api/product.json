@@ -1,6 +1,6 @@
 [{
     "Name": "Bag",
-    "code": "1-abc",
+    "code": "1",
     "date": "12-09-2021",
     "price": 70,
     "Rating": 5,
@@ -8,7 +8,7 @@
 },
 {
     "Name": "Suit",
-    "code": "2-abc",
+    "code": "2",
     "date": "12-09-2021",
     "price": 700,
     "Rating": 4,
