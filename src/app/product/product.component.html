@@ -41,8 +41,9 @@
                     [style.width.px]="width"
                     [style.margin.px]="margin"
                     ></td>
-                  <td>{{product.Name}}</td>
-                  <td>{{product.code }}</td>
+                  <td>
+                      <a [routerLink]="['/products',product.code]">{{product.Name}}</a></td>
+                  <td>{{product.code}}</td>
                   <td>{{product.date}}</td>
                   <td>{{product.price |currency:'USD':'symbol':'1.2-2'}}</td>
                   <td><app-star [rating]="product.Rating" (ratingClick)="onRatingClick($event)"></app-star></td>
