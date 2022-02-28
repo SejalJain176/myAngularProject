@@ -13,4 +13,21 @@
     "price": 700,
     "Rating": 4,
     "imageUrl": "assets/images/suit.jpg"
-}]
+},
+{
+    "Name": "Shoes",
+    "code": "3",
+    "date": "12-09-2021",
+    "price": 80,
+    "Rating": 4,
+    "imageUrl": "assets/images/shoes.jpg"
+},
+{
+    "Name": "Shirt",
+    "code": "4",
+    "date": "12-09-2021",
+    "price": 100,
+    "Rating": 4,
+    "imageUrl": "assets/images/shirt.jpeg"
+}
+]
